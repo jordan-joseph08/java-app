@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: webapp
   labels:
     app: web-app
 spec:
@@ -14,16 +14,9 @@ spec:
       labels:
         app: web-app
     spec:
-      volumes:
-      - name: cache-volume
-        hostPath:
-          path: /cache-volume
       containers:
-      - name: nginx
-        image: nginx
-        volumeMounts:
-        - name: cache-volume
-          mountPath: /cache
+      - name: web-app
+        image: tpouche94/mywebapp
         ports:
         - containerPort: 80
         
@@ -41,4 +34,4 @@ spec:
   type: NodePort
   ports:
     - protocol: TCP
-      port: 80
+      port: 8085
