@@ -1,5 +1,5 @@
 # Pull base image 
 From tomcat:8-jre8 
 
-COPY ./webapp.war /opt/tomcat/webapps
+COPY /var/lib/jenkins/workspace/Jenkins-demo/webapp/target/webapp.war /opt/tomcat/webapps
 
