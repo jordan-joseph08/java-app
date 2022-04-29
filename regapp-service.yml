@@ -9,7 +9,7 @@ spec:
     app: regapp 
 
   ports:
-    - port: 8080
+    - port: 3890
       targetPort: 8080
 
-  type: LoadBalancer
+  type: NodePort
